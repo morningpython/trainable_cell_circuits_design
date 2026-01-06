@@ -10,6 +10,10 @@ from .monitor import (
     MonitoringCallback, ProgressBarCallback, HistoryCallback,
     VisualizationCallback, TrainingMonitor
 )
+from .visualize import (
+    LearningCurveVisualizer, CircuitDynamicsVisualizer,
+    save_training_report
+)
 
 __all__ = [
     'TrainingPhase',
@@ -27,4 +31,7 @@ __all__ = [
     'HistoryCallback',
     'VisualizationCallback',
     'TrainingMonitor',
+    'LearningCurveVisualizer',
+    'CircuitDynamicsVisualizer',
+    'save_training_report',
 ]
