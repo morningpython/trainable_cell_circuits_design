@@ -1,3 +1,8 @@
 """Command-line interface for TCCDP."""
 
-__all__ = []
+from tccdp.cli.main import main, create_parser
+
+__all__ = [
+    'main',
+    'create_parser',
+]

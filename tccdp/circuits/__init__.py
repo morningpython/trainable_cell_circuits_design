@@ -1,3 +1,5 @@
 """Circuit implementations for TCCDP."""
 
-__all__ = []
+from .transcription_circuit import TranscriptionCircuit
+
+__all__ = ['TranscriptionCircuit']
