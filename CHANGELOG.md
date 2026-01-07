@@ -8,8 +8,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Phase 3: Advanced Learning and Optimization (planned)
 - Phase 4: Model Integration and Deployment (planned)
+
+## [0.3.0] - 2026-01-07
+
+### Added - Sprint 3: Molecular Dynamics & Stochastic Simulation
+
+#### E3-S1: ProteinModificationCircuit (8pts)
+- `ProteinModificationCircuit`: Protein phosphorylation/dephosphorylation signaling circuit
+- 3 state variables: U (unphosphorylated), P (phosphorylated), Htot (hidden integrator)
+- 6 chemical reactions: phosphorylation, dephosphorylation, degradation, feedback
+- ODE system integration: `get_derivatives(t, y, stimulus)` for deterministic simulation
+- Stochastic propensities: `get_propensities()` for Gillespie algorithm integration
+- Stoichiometry matrix: `get_stoichiometry()` for reaction dynamics
+- 3 example circuits: `fast_kinase_response()`, `balanced_dynamics()`, `slow_phosphatase()`
+- Factory function: `create_protein_modification_circuit(circuit_type)`
+- Parameter validation and biological constraint checking
+- 19 test cases with 97% code coverage
+
+#### E3-S2: Gillespie Stochastic Simulator (8pts)
+- `GillespieSimulator`: Exact stochastic simulation using Gillespie Direct Method
+- Exponential time sampling for event-based kinetic Monte Carlo
+- Weighted reaction selection with stoichiometry application
+- Ensemble simulation support: Multiple independent trajectories (100-1000 runs)
+- Statistical validation: Mean/std computation from ensemble data
+- Performance optimization: <1sec for 10K reactions, <10sec for 1000-run ensembles
+- Edge case handling: Zero propensity, negative state prevention, boundary conditions
+- `CircuitGillespieAdapter`: Convenience adapter for BaseCircuit integration
+- 18 test cases with 96% code coverage
+
+### Technical Achievements
+- Successfully integrated stochastic simulation with deterministic circuit framework
+- Maintained 85% overall code coverage across entire project
+- 230/230 unit tests passing (up from 193 in Sprint 2)
+- All abstract base class requirements properly implemented
+- Comprehensive test coverage for edge cases and ensemble statistics
 
 ## [0.2.0] - 2026-01-08
 
