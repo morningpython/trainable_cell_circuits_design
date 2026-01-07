@@ -42,6 +42,8 @@ htmlcov/
 .nox/
 coverage.xml
 *.cover
+test_*.txt
+test_output/
 
 # Jupyter
 .ipynb_checkpoints/
